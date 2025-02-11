@@ -1,21 +1,40 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  password varchar(255) not null
+CREATE TABLE role (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  label VARCHAR(10) NOT NULL
 );
 
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
+CREATE TABLE user (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  firstname VARCHAR(50) NOT NULL,
+  lastname VARCHAR(50) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role_id INT NOT NULL,
+  CONSTRAINT FOREIGN KEY(role_id) REFERENCES role(id)
 );
 
-insert into user(id, email, password)
-values
-  (1, "jdoe@mail.com", "123456");
+CREATE TABLE category (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  title VARCHAR(100) 
+);
 
-insert into item(id, title, user_id)
-values
-  (1, "Stuff", 1),
-  (2, "Doodads", 1);
+CREATE TABLE article (
+  id INT  PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  content TEXT,
+  picture VARCHAR(255) NOT NULL,
+  date DATE,
+  user_id INT NOT NULL,
+  category_id INT NOT NULL,
+  is_published BOOLEAN,
+  views INT,
+  CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
+  CONSTRAINT FOREIGN KEY (category_id) REFERENCES category(id)
+);
+
+
+CREATE TABLE usefull_link (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  title VARCHAR(40) NOT NULL,
+  url VARCHAR(255) NOT NULL
+);
