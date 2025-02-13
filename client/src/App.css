@@ -1,3 +1,9 @@
+/* Creation du style de la page */
+:root {
+  --main-color: #151522;
+  --secondary-color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,141 +11,258 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #eee;
-  margin: 0;
+  background: var(--secondary-color), var(--main-color);
 }
 
-#root {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: top;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: 1fr;
-  align-content: start;
-  padding: 1rem;
-}
+/* NavBar component*/
 
-header {
-  grid-column: 1 / 2;
-  grid-row: 1;
+/* Format mobile */
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: var(--main-color);
 }
 
 .logo {
-  font-size: larger;
+  width: 100%;
+  margin-top: 1em;
+  cursor: pointer;
+  margin-bottom: 1em;
 }
 
-.navbar {
-  grid-column: -2 / -1;
-  grid-row: 1;
-}
-
-.navbar ul {
+nav {
   display: flex;
-  justify-content: end;
-  gap: 1rem;
-  list-style: none;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  width: 100%;
+  background-color: var(--main-color);
+
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #eee;
+
+.mainPage {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: rows;
+  min-height: 500px;
+  background-color: antiquewhite;
+}
+
+
+.sideLeft {
+  width: 10%;
+  background-color: rgb(218, 218, 143);
+}
+
+.sideCenter {
+  width: 70%;
+}
+
+.sideRight {
+  width: 30%;
+  background-color: rgb(218, 218, 143);
+}
+
+/* .hero {
+  background-image: url(/public/Images/bacground-with-logo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40em;
+  width: 100%;
+  margin-bottom: 1em;
+} */
+
+.listAndSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navBarLink {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2em;
+  gap: 2em;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.navbar a:hover {
-  scale: 110%;
+/* .loupe {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  transform: translateX(-120%) translateY(15%);
+} */
+/* 
+.searchBar {
+  padding: 0.7em 7em;
+  border: 0.5px solid black;
+}
+ */
+nav,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+  gap: 0.5em;
+  color: #ffffff;
+  font-size: 1.1em;
+  height: 4em;
 }
 
-.text-box {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  align-self: center;
+a:hover {
+  color: #a306b6;
+}
+
+/*Responsive version*/
+
+@media screen and (max-width: 992px) {
+  .hero {
+    height: 30em;
+  }
+
+  a {
+    font-size: 0.8em;
+  }
+
+  .navBarLink {
+    gap: 1em;
+  }
+}
+
+/*Main*/
+/*Album and News*/
+
+/* article {
+  padding: 1em;
+}
+ */
+
+/* .albumTitle,
+.newsTitle,
+.artistTitle,
+.catalogTitle {
+  text-align: center;
+  color: #33035f;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.albumName,
+.newsName,
+.artistName {
+  color: black;
+} */
+
+/*AlbumDetails*/
+/*Format mobile*/
+/* .albumDetails {
+  margin-top: 1em;
   text-align: center;
 }
 
-.block-primary {
-  text-transform: uppercase;
-  margin-bottom: 2rem;
+.albumPlay {
+  width: 100%;
+  margin-top: 2em;
 }
 
-.block-primary-main {
-  font-size: 3em;
-  letter-spacing: 5px;
-  animation: blink 12s infinite;
+audio {
+  width: 200px;
 }
-
-.block-primary-sub {
-  display: block;
-  font-weight: bold;
-  letter-spacing: 7px;
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #777;
-}
-
-footer {
-  grid-column: -2 / -1;
-  grid-row: 1;
-  align-self: end;
-  text-align: right;
-}
-
-.wcs {
-  text-decoration: none;
-  color: #ff1493ad;
-}
-
-.wcs:hover {
-  text-decoration: underline;
-}
-
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
+ */
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
   }
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow: 0 0 5px #ff1493ad, 0 0 15px #eee, 0 0 20px #ff1493ad, 0 0 40px
-      #a00ac9, 0 0 60px #ff0000, 0 0 10px #970dc5, 0 0 98px #ff0000;
-    color: #fff;
+
+  article {
+    min-height: 10em;
   }
 }
+
+@media screen and (max-width: 650px) {
+  a {
+    font-size: 0.6em;
+  }
+
+  .hero {
+    height: 20em;
+    margin-top: 0;
+  }
+
+  .title {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+/* Format Desktop */
+
+@media screen and (min-width: 992px) {
+  .navBar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .logo {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .title {
+    visibility: visible;
+    margin-top: 2em;
+  }
+
+  .footer {
+    height: 5em;
+    padding-bottom: 2em;
+  }
+
+  .albumPlay {
+    margin-top: 5em;
+    text-align: left;
+  }
+
+  audio {
+    width: 300px;
+  }
+}
+
+/*Footer component*/
+/*Format mobile*/
+.footer {
+  background-color: rgb(32, 40, 44);
+  color: var(--secondary-color);
+  padding-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 0;
+  width: 100%;
+}
+
+/*Format Desktop*/
+@media screen and (min-width: 992px) {
+  .footer {
+    height: 5em;
+    padding-bottom: 2em;
+  }
+}
+
+/*Main*/
+/*Album and News*/
+/* .albums,
+.news {
+  text-align: center;
+}
+
+.albumTitle,
+.newsTitle,
+.artistTitle {
+  margin: 2em 2em;
+  text-align: center;
+} */
