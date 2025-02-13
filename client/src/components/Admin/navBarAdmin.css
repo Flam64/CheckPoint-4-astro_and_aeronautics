@@ -1,0 +1,34 @@
+/* Creation du style de la page */
+:root {
+  --main-color: #151522;
+  --secondary-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--secondary-color), var(--main-color);
+}
+
+/* NavBar component*/
+
+/* Format mobile */
+.navBarAdmin {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: var(--main-color);
+}
+
+.navBarLink {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2em;
+  gap: 2em;
+  justify-content: flex-start;
+  align-items: center;
+}

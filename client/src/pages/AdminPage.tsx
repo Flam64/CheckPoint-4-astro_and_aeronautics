@@ -1,7 +1,15 @@
+import { Outlet } from "react-router-dom";
+import NavBarAdmin from "../components/Admin/NavBarAdmin";
+
 export default function AdminPage() {
   return (
-    <div className="adminPage">
-      <h1>Hello page adminPage</h1>
-    </div>
+    <>
+      <header>
+        <NavBarAdmin />
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 }
