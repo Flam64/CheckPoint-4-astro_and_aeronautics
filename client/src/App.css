@@ -38,9 +38,7 @@ nav {
 
   width: 100%;
   background-color: var(--main-color);
-
 }
-
 
 .mainPage {
   display: flex;
@@ -48,7 +46,6 @@ nav {
   min-height: 500px;
   background-color: antiquewhite;
 }
-
 
 .sideLeft {
   width: 10%;

@@ -14,5 +14,8 @@ router.get("/api/items/:id", itemActions.read);
 router.post("/api/items", itemActions.add);
 
 /* ************************************************************************* */
+// Define database station-related route
+import articles from "./routes/article.routes";
+router.use("/", articles);
 
 export default router;
