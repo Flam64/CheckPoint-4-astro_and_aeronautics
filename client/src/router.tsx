@@ -5,7 +5,7 @@ import NewPublication from "./components/Admin/NewPublication";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-//import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -27,6 +27,10 @@ export const mainRouter = createBrowserRouter([
       {
         path: "/newpublication",
         element: <NewPublication />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
       },
     ],
   },
