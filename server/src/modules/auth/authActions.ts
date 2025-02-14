@@ -13,6 +13,6 @@ export const login: RequestHandler = async (req, res) => {
   });
 
   res.status(200).json({
-    message: "Bienvenue sur mon blog",
+    message: "Connexion en cours...",
   });
 };

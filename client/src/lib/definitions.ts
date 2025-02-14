@@ -15,3 +15,12 @@ export type PublicationType = {
   content: string;
   category: string;
 };
+
+export type userType = {
+  id: number;
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+  role_id: number;
+};

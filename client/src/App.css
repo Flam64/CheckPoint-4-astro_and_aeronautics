@@ -44,7 +44,7 @@ nav {
   display: flex;
   flex-direction: rows;
   min-height: 500px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .sideLeft {
@@ -58,7 +58,7 @@ nav {
 
 .sideRight {
   width: 30%;
-  background-color: rgb(240, 239, 239);
+  background-color: #f0efef;
 }
 
 .listAndSearch {
@@ -79,16 +79,17 @@ nav {
 nav,
 li,
 a {
+  align-content: center;
   text-decoration: none;
   list-style: none;
   gap: 0.5em;
   color: #ffffff;
   font-size: 1.1em;
-  height: 4em;
+  height: 3em;
 }
 
 a:hover {
-  color: #a306b6;
+  color: #b62f06;
 }
 
 /*Responsive version*/
@@ -148,7 +149,7 @@ a:hover {
 /*Footer component*/
 /*Format mobile*/
 .footer {
-  background-color: rgb(32, 40, 44);
+  background-color: #20282c;
   color: var(--secondary-color);
   padding-top: 1em;
   display: flex;

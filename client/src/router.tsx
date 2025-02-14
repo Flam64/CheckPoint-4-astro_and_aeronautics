@@ -18,12 +18,12 @@ export const mainRouter = createBrowserRouter([
     ],
   },
   {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
     element: <AdminPage />,
     children: [
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
       {
         path: "/newpublication",
         element: <NewPublication />,

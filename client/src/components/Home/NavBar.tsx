@@ -29,10 +29,10 @@ export default function NavBar() {
               <NavLink to={"/"}>Accueil</NavLink>
             </li>
             <li>
-              <NavLink to={"/login"}>Astronomie</NavLink>
+              <NavLink to={"/"}>Astronomie</NavLink>
             </li>
             <li>
-              <NavLink to={"/news"}>Aéronautique</NavLink>
+              <NavLink to={"/"}>Aéronautique</NavLink>
             </li>
           </ul>
         </nav>
