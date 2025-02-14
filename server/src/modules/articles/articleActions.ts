@@ -46,7 +46,7 @@ const add: RequestHandler = async (req, res) => {
   try {
     const rows = await articleRepository.create(data);
     if (rows !== null) {
-      res.status(201).json("Mise à jour bien terminé");
+      res.status(201);
     } else {
       res.status(500).json("La mise à jour de la table station à échoué");
     }

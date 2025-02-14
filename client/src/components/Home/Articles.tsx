@@ -35,7 +35,7 @@ export default function Articles() {
           {article?.map((n: ArticleType) => (
             <article className="articleCard" key={n.id}>
               <figure className="imageCard">
-                <img src={n.picture} alt="" />
+                <img src={`uploads/${n.picture}`} alt="" />
               </figure>
               <div className="titlecard">
                 <h1>{n.title}</h1>

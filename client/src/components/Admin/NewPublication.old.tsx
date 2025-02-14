@@ -1,41 +1,16 @@
 import { useForm } from "react-hook-form";
 import "./admin.css";
-import { useState } from "react";
 import { toast } from "react-toastify";
 import type { PublicationType } from "../../lib/definitions";
 
 export default function NewPublication() {
-  const [uploadImage, setUploadImage] = useState("");
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<PublicationType>();
 
-  const handleFileChange = async (event: React.ChangeEvent) => {
-    event.preventDefault();
-
-    const target = event.target as HTMLInputElement;
-    if (target.files?.length) {
-      const formData = new FormData();
-      formData.append("picture", target.files[0]);
-
-      fetch(`${import.meta.env.VITE_API_URL}/api/article/upload`, {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((data) => setUploadImage(data.picture))
-        .catch((error) =>
-          toast.error("Oups ! Une erreur s'est produite", error),
-        );
-    }
-  };
-
-  const onSubmit = async (data: PublicationType) => {
-    data.picture = uploadImage;
-
+  const onSubmit = (data: PublicationType) => {
     fetch(`${import.meta.env.VITE_API_URL}/api/article/new`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -45,15 +20,16 @@ export default function NewPublication() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.info("Retour data: ", data);
+        console.info("Valeur de data", data);
         if (data === 201) {
-          toast.success("Votre publication est enregistrée ");
+          toast.success("Votre reservation et enregistré ");
         } else {
-          toast.warning("Oups ! Impossible d'enregistrer votre publicaton...");
+          toast.warning("Oups ! Impossible d'enregistrer votre réservation...");
         }
       })
       .catch((error) => toast.error("Oups ! Une erreur s'est produite", error));
   };
+
   return (
     <>
       <div className="newPublication">
@@ -64,16 +40,16 @@ export default function NewPublication() {
             <label htmlFor="text">Image :</label>
             <br />
             <input
-              type="file"
               size={81}
               {...register("picture", {
                 required: "Le lien de l'image est requis",
               })}
               placeholder="Image de la publication"
-              onChange={handleFileChange}
             />
             {errors.picture && <p>{errors.picture.message}</p>}
+
             <br />
+
             {/* category */}
             <label htmlFor="text">Catégorie :</label>
             <br />
