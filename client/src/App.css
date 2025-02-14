@@ -44,12 +44,12 @@ nav {
   display: flex;
   flex-direction: rows;
   min-height: 500px;
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
 }
 
 .sideLeft {
   width: 10%;
-  background-color: rgb(218, 218, 143);
+  background-color: rgb(240, 239, 239);
 }
 
 .sideCenter {
@@ -58,18 +58,8 @@ nav {
 
 .sideRight {
   width: 30%;
-  background-color: rgb(218, 218, 143);
+  background-color: rgb(240, 239, 239);
 }
-
-/* .hero {
-  background-image: url(/public/Images/bacground-with-logo.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40em;
-  width: 100%;
-  margin-bottom: 1em;
-} */
 
 .listAndSearch {
   display: flex;
@@ -86,18 +76,6 @@ nav {
   align-items: center;
 }
 
-/* .loupe {
-  height: 25px;
-  width: 25px;
-  position: absolute;
-  transform: translateX(-120%) translateY(15%);
-} */
-/* 
-.searchBar {
-  padding: 0.7em 7em;
-  border: 0.5px solid black;
-}
- */
 nav,
 li,
 a {
@@ -116,10 +94,6 @@ a:hover {
 /*Responsive version*/
 
 @media screen and (max-width: 992px) {
-  .hero {
-    height: 30em;
-  }
-
   a {
     font-size: 0.8em;
   }
@@ -129,46 +103,6 @@ a:hover {
   }
 }
 
-/*Main*/
-/*Album and News*/
-
-/* article {
-  padding: 1em;
-}
- */
-
-/* .albumTitle,
-.newsTitle,
-.artistTitle,
-.catalogTitle {
-  text-align: center;
-  color: #33035f;
-  font-size: 2em;
-  margin-bottom: 1.5em;
-}
-
-.albumName,
-.newsName,
-.artistName {
-  color: black;
-} */
-
-/*AlbumDetails*/
-/*Format mobile*/
-/* .albumDetails {
-  margin-top: 1em;
-  text-align: center;
-}
-
-.albumPlay {
-  width: 100%;
-  margin-top: 2em;
-}
-
-audio {
-  width: 200px;
-}
- */
 @media screen and (min-width: 768px) {
   nav {
     display: flex;
@@ -184,16 +118,6 @@ audio {
 @media screen and (max-width: 650px) {
   a {
     font-size: 0.6em;
-  }
-
-  .hero {
-    height: 20em;
-    margin-top: 0;
-  }
-
-  .title {
-    visibility: hidden;
-    height: 0;
   }
 }
 
@@ -219,15 +143,6 @@ audio {
     height: 5em;
     padding-bottom: 2em;
   }
-
-  .albumPlay {
-    margin-top: 5em;
-    text-align: left;
-  }
-
-  audio {
-    width: 300px;
-  }
 }
 
 /*Footer component*/
@@ -249,17 +164,3 @@ audio {
     padding-bottom: 2em;
   }
 }
-
-/*Main*/
-/*Album and News*/
-/* .albums,
-.news {
-  text-align: center;
-}
-
-.albumTitle,
-.newsTitle,
-.artistTitle {
-  margin: 2em 2em;
-  text-align: center;
-} */

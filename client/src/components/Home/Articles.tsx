@@ -6,13 +6,11 @@ import { createPortal } from "react-dom";
 import type { ArticleType } from "../../lib/definitions";
 import ModalDetailsArticle from "./ModalDetailsArticle";
 
-// faire un fetch
 export default function Articles() {
-  //const listNews: ArticleType[] = Article;
-
   const [article, setArticle] = useState<ArticleType[]>([]);
   const [showModaleArticle, setShowModalArticle] = useState(false);
   const [articleToRead, setArticleToRead] = useState(0);
+  const MAX_CHAR_TITLE = 210;
 
   const handleElementClick = (e: number) => {
     setArticleToRead(e);
@@ -37,13 +35,17 @@ export default function Articles() {
           {article?.map((n: ArticleType) => (
             <article className="articleCard" key={n.id}>
               <figure className="imageCard">
-                <img src={n.picture} alt="" />
+                <img src={`uploads/${n.picture}`} alt="" />
               </figure>
               <div className="titlecard">
                 <h1>{n.title}</h1>
               </div>
               <div className="descriptionCard">
-                <h2>{n.content}</h2>
+                <h2>
+                  {n.content.length > MAX_CHAR_TITLE
+                    ? n.content.substring(0, MAX_CHAR_TITLE)
+                    : n.content}
+                </h2>
                 <button type="button" onClick={() => handleElementClick(n.id)}>
                   Consulter l'article
                 </button>

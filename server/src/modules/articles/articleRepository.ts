@@ -2,10 +2,13 @@
 import databaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 import type { ArticleType } from "../../lib/definitions";
+import type { PublicationType } from "../../lib/definitions";
 
 class ArticleRepository {
   async browseAll() {
-    const [rows] = await databaseClient.query<Rows>("SELECT * FROM article");
+    const [rows] = await databaseClient.query<Rows>(
+      "SELECT * FROM article ORDER BY date DESC",
+    );
     return rows;
   }
 
@@ -27,20 +30,16 @@ class ArticleRepository {
 
     return rows as unknown as Book;
   }
-
-  async create(book: Omit<Book, "id">) {
-    const [startSlot, endSlot] = convertSlotToHoursMinutes(
-      book.slot,
-      book.slotDuration,
-    );
-
-    if (book !== null) {
+*/
+  async create(newArticle: Omit<PublicationType, "id">) {
+    console.info("Valeur d'article", newArticle.picture);
+    if (newArticle !== null) {
       const [result] = await databaseClient.query<Result>(
-        "INSERT INTO book (user_id, station_id, slot, start_book, end_book) VALUES (?,?,?,?,?)",
-        [book.user_id, book.station_id, book.slot, startSlot, endSlot],
+        "INSERT INTO article (title, content, picture, user_id, category_id) VALUES (?,?,?,?,?)",
+        [newArticle.title, newArticle.content, newArticle.picture, 1, 1],
       );
       return result.insertId;
     }
-  } */
+  }
 } // end
 export default new ArticleRepository();

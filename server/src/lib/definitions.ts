@@ -9,3 +9,10 @@ export type ArticleType = {
   is_published: boolean;
   views: number;
 };
+
+export type PublicationType = {
+  title: string;
+  picture: string;
+  content: string;
+  category: string;
+};

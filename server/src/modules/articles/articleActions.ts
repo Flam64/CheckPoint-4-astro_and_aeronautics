@@ -39,20 +39,20 @@ const readBook: RequestHandler = async (req, res) => {
     }
   } catch (err) {}
 };
-
-const addBook: RequestHandler = async (req, res) => {
+*/
+const add: RequestHandler = async (req, res) => {
+  console.info("req Body", req.body);
+  const { data } = req.body;
   try {
-    const rows = await markerRepository.create(req.body);
+    const rows = await articleRepository.create(data);
     if (rows !== null) {
-      res.status(201).json("Mise à jour bien terminé");
+      res.status(201);
     } else {
       res.status(500).json("La mise à jour de la table station à échoué");
     }
   } catch (err) {
     res.json("La mise à jour de la table station à échoué");
   }
-}; */
+};
 
-export default { browse, read };
-
-//read, readBook, addBook
+export default { browse, read, add };

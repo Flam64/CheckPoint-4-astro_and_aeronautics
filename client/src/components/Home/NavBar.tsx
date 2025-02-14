@@ -20,7 +20,6 @@ export default function NavBar() {
           onClick={handleClick}
           onKeyUp={handleKeyUp}
         />
-        {/* <img className="title" src="" alt="Titre du site MusicWild" /> */}
       </div>
 
       <div className="listAndSearch">

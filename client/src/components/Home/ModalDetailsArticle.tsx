@@ -36,7 +36,7 @@ export default function ModaleDetailsArticle({
     <div className="modalDetails">
       <div className="modalContent">
         <div>
-          <img src={readArticle?.[0].picture} alt="" />
+          <img src={`uploads/${readArticle?.[0].picture}`} alt="" />
         </div>
         <div>
           <h1>{readArticle?.[0].title}</h1>
