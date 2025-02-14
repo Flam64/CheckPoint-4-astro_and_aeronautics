@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import "../components/Admin/admin.css";
+
 export default function LoginPage() {
   const {
     register,
@@ -16,11 +18,9 @@ export default function LoginPage() {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const formSubmit = async (data: any) => {
     try {
-      console.info("je sis la");
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
+        `${import.meta.env.VITE_API_URL}/api/login`,
         data,
-        // Ajout des credentials ici
         {
           withCredentials: true,
         },
@@ -29,7 +29,7 @@ export default function LoginPage() {
       console.info("response", response);
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/newpublication");
       }, 1500);
     } catch (e) {
       console.info(e);
@@ -38,19 +38,20 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="">
+    <section className="pageLogin">
       <div className="">
-        <h2 className="">Login</h2>
-
-        <form className="" onSubmit={handleSubmit(formSubmit)}>
+        <h2 className="title">Login</h2>
+        <form className="loginForm" onSubmit={handleSubmit(formSubmit)}>
           <div>
             <label htmlFor="email" className="">
               Email
-            </label>
+            </label>{" "}
+            <br />
             <input
               id="email"
               type="email"
-              className=""
+              size={40}
+              className="email"
               placeholder="your@email.com"
               {...register("email", {
                 required: "L'email est obligatoire",
@@ -61,21 +62,17 @@ export default function LoginPage() {
               })}
             />
             {errors.email?.message && (
-              // biome-ignore lint/a11y/useSemanticElements: <explanation>
-              <p role="alert" className="">
-                {errors.email.message as ReactNode}
-              </p>
+              <p>{errors.email.message as ReactNode}</p>
             )}
           </div>
 
           <div>
-            <label htmlFor="pwd" className="">
-              Password
-            </label>
+            <label htmlFor="pwd">Password</label> <br />
             <input
               id="pwd"
               type="password"
-              className=""
+              className="pwd"
+              size={40}
               placeholder="••••••••"
               {...register("password", {
                 required: "Le mot de passe est obligatoire",
@@ -88,13 +85,9 @@ export default function LoginPage() {
               })}
             />
             {errors.password?.message && (
-              // biome-ignore lint/a11y/useSemanticElements: <explanation>
-              <p role="alert" className="">
-                {errors.password.message as ReactNode}
-              </p>
+              <p>{errors.password.message as ReactNode}</p>
             )}
           </div>
-
           <button type={"submit"} className="">
             Login
           </button>

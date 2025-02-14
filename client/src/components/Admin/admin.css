@@ -31,6 +31,71 @@ body {
   align-items: center;
 }
 
+.pageLogin {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.pageRegister {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.title {
+  margin: 1px auto;
+  text-align: center;
+}
+
+.loginForm {
+  width: 450px;
+  padding: 2rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.registerForm {
+  width: 450px;
+  padding: 2rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.registerForm button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.loginForm button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.firstname {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.name {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.email {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.pwd {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
 .formArticle input,
 textarea {
   margin: 0.5rem;

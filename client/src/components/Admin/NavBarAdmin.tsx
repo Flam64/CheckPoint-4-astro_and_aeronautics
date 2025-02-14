@@ -14,7 +14,7 @@ export default function NavBarAdmin() {
               <NavLink to={"/newpublication"}>Nouvelle publication</NavLink>
             </li>
             <li>
-              <NavLink to={"/news"}>Créer un utilisateur</NavLink>
+              <NavLink to={"/"}>Créer un utilisateur</NavLink>
             </li>
           </ul>
         </nav>

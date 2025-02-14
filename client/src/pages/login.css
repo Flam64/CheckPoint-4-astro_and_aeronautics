@@ -1,0 +1,14 @@
+:root {
+  --main-color: #151522;
+  --secondary-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--secondary-color), var(--main-color);
+}
