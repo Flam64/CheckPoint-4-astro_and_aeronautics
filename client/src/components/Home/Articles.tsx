@@ -10,7 +10,9 @@ export default function Articles() {
   const [article, setArticle] = useState<ArticleType[]>([]);
   const [showModaleArticle, setShowModalArticle] = useState(false);
   const [articleToRead, setArticleToRead] = useState(0);
-  const MAX_CHAR_TITLE = 210;
+
+  const MAX_CHAR_TITLE = 100;
+  const MAX_CHAR_CONTENT = 210;
 
   const handleElementClick = (e: number) => {
     setArticleToRead(e);
@@ -38,12 +40,16 @@ export default function Articles() {
                 <img src={`uploads/${n.picture}`} alt="" />
               </figure>
               <div className="titlecard">
-                <h1>{n.title}</h1>
+                <h1>
+                  {n.content.length > MAX_CHAR_TITLE
+                    ? n.title.substring(0, MAX_CHAR_TITLE)
+                    : n.title}
+                </h1>
               </div>
               <div className="descriptionCard">
                 <h2>
                   {n.content.length > MAX_CHAR_TITLE
-                    ? n.content.substring(0, MAX_CHAR_TITLE)
+                    ? n.content.substring(0, MAX_CHAR_CONTENT)
                     : n.content}
                 </h2>
                 <button type="button" onClick={() => handleElementClick(n.id)}>
