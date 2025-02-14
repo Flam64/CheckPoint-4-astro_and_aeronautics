@@ -1,4 +1,5 @@
 import Articles from "../components/Home/Articles";
+import ArticlesPopulaires from "../components/Home/ArticlesPopulaires";
 
 export default function HomePage() {
   return (
@@ -10,7 +11,8 @@ export default function HomePage() {
         <Articles />
       </div>
       <div className="sideRight">
-        <h2>Liens utiles</h2>
+        <h2 className="populaires">Articles populaires</h2>
+        <ArticlesPopulaires />
       </div>
     </div>
   );
