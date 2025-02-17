@@ -1,0 +1,108 @@
+:root {
+  --main-color: #151522;
+  --secondary-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--secondary-color), var(--main-color);
+}
+
+.newPublication {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 850px;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.formArticle {
+  display: flex;
+  flex-direction: column;
+  width: 850px;
+  padding: 2rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.pageLogin {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.pageRegister {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.title {
+  margin: 1px auto;
+  text-align: center;
+}
+
+.loginForm {
+  width: 450px;
+  padding: 2rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.registerForm {
+  width: 450px;
+  padding: 2rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.registerForm button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.loginForm button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.firstname {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.name {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.email {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.pwd {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.formArticle input,
+textarea {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.formArticle button {
+  margin: 1.2rem;
+  padding: 0.8rem 1.5rem;
+}
